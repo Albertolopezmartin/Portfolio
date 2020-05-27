@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Alberto López Martín">
+    <title>Portfolio-Alberto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
+    <style>
+
+      #animacion {position:relative;
+                  height:600px;}
+
+      #animacion p {position:absolute;
+                    bottom:10px;
+                    display:none;}
+
+      #fig1 {position:absolute;
+             top:50px;
+             left:10px;
+             height:100px;
+             width:100px;
+             background-color: rgb(18, 114, 204);}
+
+      #cuadrado {position:relative;
+             height:100px;
+             width:100px;
+             background-color: black;}
+
+      #fig2 {position:absolute;
+             top:50px;
+             right:10px;
+             height:100px;
+             width:100px;
+             border-radius:50%;
+             background-color: rgb(255, 203, 32);}
+
+      .jumbotron {background-image: url("imagenes/fondo.jpg");
+                  height:100vh;
+                  background-size: cover;
+                  background-position: center;}
+
+      body{background-color: rgb(135, 191, 243);}
+
+      #javascript{background-color: rgb(185, 221, 255);}
+      
+      #json{background-color: rgb(108, 153, 196);}
+
+      footer ul {list-style-type: none;
+           margin:0;
+           padding:0;}
+
+      a:link {text-decoration: none;}
+
+      a .fa {font-size: 20px;
+            margin-right: 5px;
+            color: white;}
+
+  </style>
+</head>
+<body>
+  <!-- BARRA DE NAVEGACIÓN -->
+      
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      JavaScript
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#javascript">Ejercicio 1</a>
+                      <a class="dropdown-item" href="#ejs3">Ejercicio 2</a>
+                      <a class="dropdown-item" href="#ejs4">Ejercicio 3</a>
+                      <a class="dropdown-item" href="#ejs5">Ejercicio 4</a>
+                      <a class="dropdown-item" href="#ejs6">Ejercicio 5</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      jQuery
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#jquery">Ejercicio 1</a>
+                        <a class="dropdown-item" href="#ejq2">Ejercicio 2</a>
+                        <a class="dropdown-item" href="#ejq3">Ejercicio 3</a>
+                        <a class="dropdown-item" href="#ejq4">Ejercicio 4</a>
+                        <a class="dropdown-item" href="#ejq5">Ejercicio 5</a>
+                      </div>
+                  </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    JSON
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#json">Ejercicio 1</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <br>
+
+          <!-- JUMBOTRON -->
+        <div class="jumbotron" id="inicio">
+            <h1 class="display-4">Mundo de JavaScript</h1>
+            <p class="lead-bold">Portfolio con mis ejercicios de JavaScript, Jquery y JSON de Lenguaje de Marcas de 1º DAW.</p>
+            <hr class="my-4">
+            <p>Autor: Alberto López Martín - IES Campanillas - Curso 2019/2020.</p>
+        </div>
+        <br>
+        <div id="wrapper" class="container-fluid">
+        <!--Sección JavaScript-->
+        <section id="javascript">
+
+            <div class="titulo my-4">
+                <p class="display-4 text-center text-dark font-weight-bold
+                border-bottom border-dark w-50 mx-auto">JavaScript</p>
+              </div>
+              <br>
+
+            <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejs3">
+                <div class="card-body">
+                <h5 class="card-title">Ejercicio 1</h5>
+                <div id="wrapper" class="col-sm-12 col-md-10 col-lg-8 my-3 mx-auto">
+                  <form onsubmit="return areaTri()">
+                      <h1>Cálculo de áreas de triángulo</h1>
+                      <div class="form-group">
+                        <label for="base">Base:</label>
+                        <input type="text" onfocus="quitarError('base')" class="form-control" id="base" aria-describedby="baseHelp">
+                        <small id="baseHelp" class="form-text text-danger"></small>
+                      </div>
+                      <div class="form-group">
+                        <label for="altura">Altura:</label>
+                        <input type="text" onfocus="quitarError('altura')" class="form-control" id="altura">
+                        <small id="alturaHelp" class="form-text text-danger"></small>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Calcular</button>
+                    </form>
+                  <h2 id="resultado1" class="my-3"></h2>
+                </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejs4">
+              <div class="card-body">
+              <h5 class="card-title">Ejercicio 2</h5>
+              <div id="wrapper" class="col-sm-12 col-md-10 col-lg-8 my-3 mx-auto">
+                <form onsubmit="return calculoLetraDni()">
+                  <h1>Cálculo de letra del DNI</h1>
+                  <div class="form-group">
+                    <label for="numeroDni">Número de DNI:</label>
+                    <input type="text" onfocus="quitarError('numeroDni')" class="form-control" id="numeroDni" aria-describedby="numeroDniHelp">
+                    <small id="numeroDniHelp" class="form-text text-danger"></small>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Calcular</button>
+                </form>
+              <h2 id="resultado2" class="my-3"></h2>
+              </div>
+              </div>
+          </div>
+          <br>
+
+          <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejs5">
+            <div class="card-body">
+            <h5 class="card-title">Ejercicio 3</h5>
+            <div id="wrapper" class="col-sm-12 col-md-10 col-lg-8 my-3 mx-auto">
+              <form onsubmit="return diviRestas()">
+                <h1>División a traves de restas sucesivas</h1>
+                <div class="form-group">
+                  <label for="div">Dividendo:</label>
+                  <input type="text"  class="form-control" id="divi1" aria-describedby="divi1Help">
+                  <small id="divi1Help" class="form-text text-danger"></small>
+                </div>
+                <div class="form-group">
+                  <label for="disor">Divisor:</label>
+                  <input type="text"  class="form-control" id="disor1" aria-describedby="disor1Help">
+                  <small id="disor1Help" class="form-text text-danger"></small>
+                </div>
+                <input type="submit" value="Calcular" class="btn btn-primary">
+              </form>
+                <h2 id="resultado3" class="my-3"></h2>
+            </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejs6">
+          <div class="card-body">
+          <h5 class="card-title">Ejercicio 4</h5>
+          <div id="wrapper" class="col-sm-12 col-md-10 col-lg-8 my-3 mx-auto">
+              <form onsubmit="return comprobarTexto()">
+                <div class="form-group">
+                  <h1>Introduce aquí el texto a comprobar:</h1>
+                  <input type="text" class="form-control" id="texto">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Comprobar">
+              </form>
+              <h2 id="resultado4" class="my-3"></h2>
+          </div>
+          </div>
+      </div>
+      <br>
+
+        <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejs7">
+          <div class="card-body">
+            <h5 class="card-title">Ejercicio 5</h5>
+            <div id="wrapper" class="col-sm-12 col-md-10 col-lg-8 my-3 mx-auto">
+            <form onsubmit="return mcd()">
+              <h1>MCD de dos números por el algoritmo de Euclides</h1>
+              <div class="form-group">
+                <label for="divi2">Dividendo:</label>
+                <input type="number" class="form-control" id="divi2" aria-describedby="divi2Help" required>
+                <small id="divi2Help" class="form-text text-danger"></small>
+              </div>
+              <div class="form-group">
+                <label for="disor2">Divisor:</label>
+                <input type="text" class="form-control" id="disor2" aria-describedby="disor2Help">
+                <small id="disor2Help" class="form-text text-danger"></small>
+              </div>
+              <input type="submit" value="Calcular" class="btn btn-primary">
+            </form>
+            <h2 id="resultado5" class="my-3"></h2>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        </section>
+
+        <!--Sección jQuery-->
+        <section id="jquery">
+
+            <div class="titulo my-4">
+                <p class="display-4 text-center text-dark font-weight-bold
+                border-bottom border-dark w-50 mx-auto">jQuery</p>
+              </div>
+              <br>
+
+            <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejq1">
+                <div class="card-body">
+                <h5 class="card-title">Ejercicio 1</h5>
+                <div id="hideshow">
+                    <h2>Mostrar y ocultar texto</h2>
+                    <p id="p1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, blanditiis ipsa quisquam quibusdam sed libero tempore quidem enim autem tempora deleniti nam ratione modi quis voluptate nisi quam, cumque praesentium!</p>
+                    <div class="text-center mt-4"></div>
+                      <button class="btn btn-secondary">Ocultar</button>
+                      <button class="btn btn-light">Mostrar</button>
+                      <button class="btn btn-warning">Toggle</button>
+                      </div>
+                  </div>
+                </div>
+            
+            <br>
+
+            <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejq2">
+              <div class="card-body">
+              <h5 class="card-title">Ejercicio 2</h5>
+              <h2>Animación animate/stop</h2>
+              <div id="animacion">
+                <div id="fig1"></div>
+                <div id="fig2"></div>
+                <div class="text-center mt-4">
+                  <button class="btn btn-dark" id="start">Animate</button>
+                  <button class="btn btn-dark" id="stop">Stop</button>
+                </div>
+                <p id="bienvenida" class="display-4">Bienvenidos a mi portfolio</p>
+                </div>
+              </div>
+          </div>
+          <br>
+
+          <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejq3">
+            <div class="card-body">
+            <h5 class="card-title">Ejercicio 3</h5>
+            <h2>Ejercicio callback/chaining</h2>
+              <div class="text-center mt-4">
+                <p id="p2">Mira lo que se hacer!</p>
+              </div>
+            </div>
+            <div class="text-center mt-4"></div>
+            <button class="btn btn-primary" id="virgerias">Muestrame</button>
+          </div>
+        
+        <br>
+
+        <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejq4">
+          <div class="card-body">
+          <h5 class="card-title">Ejercicio 4</h5>
+          <h2>Ejercicio manejos de nodos</h2>
+            <div class="text-center mt-4">
+              <p id="p2">Mira lo que se hacer!</p>
+            </div>
+          </div>
+          <div class="text-center mt-4"></div>
+          <button class="btn btn-primary" id="virgerias">Muestrame</button>
+        </div>
+      
+      <br>
+
+          <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" id="ejq5">
+            <div class="card-body">
+              <h5 class="card-title">Ejercicio 5</h5>
+              <h2>Manejo de CSS</h2>
+            </div>
+            <div class="p-5">
+              <div id="cuadrado" class="mx-auto"></div>
+              <div class="text-center mt-4">
+                <button id="azul" class="btn btn-primary">Azul</button>
+                <button id="verde" class="btn btn-success">Verde</button>
+                <button id="rojo" class="btn btn-danger">Rojo</button>
+              </div>
+            </div>
+          </div>
+          <br>
+
+        </section>
+
+        <!--Sección Json-->
+        <section id="json">
+
+            <div class="titulo my-4">
+                <p class="display-4 text-center text-dark font-weight-bold
+                border-bottom border-dark w-50 mx-auto">JSON</p>
+              </div>
+            <div class="card col-sm-10 col-md-8 col-lg-6 my-3 mx-auto" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Ejercicio 1</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <br>
+
+        </section>
+      </div>
+        <!--FOOTER-->
+        <footer class="text-light bg-dark container-fluid">
+            <div class="row p-4">
+               <div class="col-12 col-md-6 col-lg-3 p-4">
+                <p class="border-bottom border-white">PORTFOLIO</p>
+               </div>
+               <div class="col-12 col-md-6 col-lg-3 p-4">
+                 <p class="border-bottom border-white">DATOS DE CONTACTO</p>
+                 <ul>
+                   <li>C/ Barrera de la Trinidad<br>29009 - Málaga</li>
+                   <li>Móvil: 663 34 01 32</li>
+                   <li>alberniwe@hotmail.es</li>
+                   <li>Alberto López Martín</li>
+                 </ul>
+               </div>
+               <div class="col-12 col-md-6 col-lg-3 p-4">
+                 <p class="border-bottom border-white">SITE MAP</p>
+                 <ul>
+                   <li><a class="text-white" href="#inicio">Inicio</a></li>
+                   <li><a class="text-white" href="#javascript">JavaScript</a></li>
+                   <li><a class="text-white" href="#jquery">Jquery</a></li>
+                   <li><a class="text-white" href="#json">JSON</a></li>
+                   
+                 </ul>
+               </div>
+               <div class="col-12 col-md-6 col-lg-3 p-4">
+                 <p class="border-bottom border-white">REDES SOCIALES</p>
+                 <p>
+                   <a href="https://www.facebook.com/profile.php?id=100005075943522" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> &nbsp;
+                     <a href="https://github.com/Albertolopezmartin" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp;
+                   </p>
+               </div>
+            </div>
+         </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+      function areaTri() {
+
+          var base = parseFloat(document.getElementById("base").value);
+          var altura = parseFloat(document.getElementById("altura").value);
+          var area;
+          var errores=0; // flag que indicará si lo sdatos de entrada son correctos
+
+           
+          errores = validarNumber(base,"base") + validarNumber(altura,"altura");
+
+          if (errores>0){
+            return false;
+          }
+
+          area = base * altura / 2;
+          document.getElementById("resultado1").innerHTML= ("El área del triángulo es: "+ area);
+
+          //PARA PODER VISUALIZAR EL RESULTADO, DEBO FRENAR EL ENVIO DEL FORMULARIO
+          return false;
+      }
+      
+      function validarNumber(valor, campo){
+
+        if (isNaN(valor)) {
+
+              document.getElementById(campo).style.borderColor="red";
+              document.getElementById(campo + "Help").innerHTML= (`La ${campo} debe ser numérica.`);
+              return 1;
+
+            } else {
+              return 0;
+            } 
+      }  
+      
+       function calculoLetraDni() {
+
+            var numeroDni = document.getElementById("numeroDni").value;
+            const LETRAS = "TRWAGMYFPDXBNJZSQVHLCKE";
+            var miLetra;
+           
+            
+            if (! validarDni(numeroDni,"numeroDni")){
+              return false;
+            }
+            
+
+            miLetra = LETRAS.substr(numeroDni%23,1);
+            
+            document.getElementById("resultado2").innerHTML= ("La letra de tu DNI es: "+ miLetra);
+
+            //PARA PODER VISUALIZAR EL RESULTADO, DEBO FRENAR EL ENVIO DEL FORMULARIO
+            return false;
+        }
+        
+        function validarDni(valor, campo){
+
+          if (isNaN(parseInt(valor)) || (valor!=Math.trunc(valor)) || (valor.length<7) || (valor.length>8)){
+                document.getElementById(campo).style.borderColor="red";
+                document.getElementById(campo + "Help").innerHTML="El DNI debe ser entero y tener 7 u 8 digitos";
+                return false;
+          } else {
+              return true;
+          }
+        }
+
+      function quitarError(campo) {
+
+        document.getElementById(campo).style.borderColor="gray";
+        document.getElementById(campo + "Help").innerHTML="";
+      }
+
+      function diviRestas(){
+
+        var dividendo = document.getElementById("divi1").value;
+        var divisor = document.getElementById("disor1").value;
+        var contador = 0;
+
+        dividendo = dividendo - divisor;
+        
+        while(dividendo >0){
+          contador = contador + 1;
+          dividendo = dividendo - divisor;
+        }
+
+        document.getElementById("resultado3").innerHTML = ("El resultado de la división es: "+ dividendo + " , el dividendo se ha restado por el divisor " + contador + " veces");
+        return false;
+      }
+
+      function mcd() {
+
+        var dividendo = parseFloat(document.getElementById("divi2").value);
+        var divisor = parseFloat(document.getElementById("disor2").value);
+        var mcd;
+
+        while (dividendo > 0) {
+          mcd = dividendo;
+          dividendo = divisor % dividendo;
+          divisor = mcd;
+        }
+
+        document.getElementById("resultado5").innerHTML = ("El máximo común divisor es: " +mcd) ;
+        return false;
+
+      };
+
+      function comprobarPalabras(words) {
+
+          words = String(words).trim();
+
+          const comprobador = {
+              "minusculas": /^[a-z0-9 ]+$/,
+              "mayusculas": /^[A-Z0-9 ]+$/,
+              "combinacion": /^[A-Za-z0-9 ]+$/
+          }
+
+          if (comprobador.minusculas.test(words)) return 0;
+          if (comprobador.mayusculas.test(words)) return 1;
+          if (comprobador.combinacion.test(words)) return 2;
+          return -1;
+      };
+
+      function comprobarTexto() {
+
+          var mensaje = document.getElementById("texto").value;
+          var resultado = comprobarPalabras(mensaje);
+
+          switch (resultado) {
+              case 0:
+                  document.getElementById("resultado4").innerHTML = "El texto que has introducido esta en minúsculas."
+                  break;
+              case 1:
+                  document.getElementById("resultado4").innerHTML = "El texto que has introducido esta en mayúsculas."
+                  break;
+              case 2:
+                  document.getElementById("resultado4").innerHTML = "El texto que has introducido tiene tanto mayúsculas y minúsculas."
+                  break;
+              default:
+                  document.getElementById("resultado4").innerHTML = "No has introducido nada."
+                  break;
+          }
+
+          return false;
+      };
+
+      $(document).ready(function(){
+
+            $(".btn-secondary").click(function(){
+
+                $("#p1").hide();
+
+            }); 
+
+            $(".btn-light").click(function(){
+
+                $("#p1").show();
+
+            });  
+
+            $(".btn-warning").click(function(){
+
+             $("#p1").toggle();
+
+           });
+
+            $("#start").click(function(){
+
+                  // cuadro azul, se desplaza
+                $("#fig1").animate({
+                  left: '40%',
+                  top:'50%',
+                  height: '150px',
+                  width: '150px',
+                  opacity:0.5
+                },3000);
+
+                  // círculo naranja, se desplaza
+                $("#fig2").animate({
+                  right: '30%',
+                  top:'40%',
+                  height: '150px',
+                  width: '150px',
+                  opacity:0.5
+                },3000);
+
+                  // rótulo de bienvenida
+                  $("#animacion p").fadeIn(2000);
+            });
+
+            $("#virgerias").click(function(){
+
+                $("#p2").css("color", "blue")
+                  .slideUp(2000)
+                  .slideDown(2000);
+              });
+
+              $("#azul").click(function () {
+                  // azul
+                  $("#cuadrado").css({ "background-color": "blue" });
+                });
+
+                $("#verde").click(function () {
+                  // verde
+                  $("#cuadrado").css({ "background-color": "green" });
+                });
+
+                $("#rojo").click(function () {
+                  // rojo
+                  $("#cuadrado").css({ "background-color": "red" });
+                });
+
+              $("#stop").click(function(){
+                
+                  $("#fig1").stop(true,true);
+                  $("#fig2").stop(true,true);
+              });
+
+              
+        });
+  </script>
+</body>
+</html>
